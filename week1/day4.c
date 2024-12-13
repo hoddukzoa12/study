@@ -34,7 +34,7 @@ float calculate_probability(int a, int b) {
     int my_score = calculate_score(a, b);
     for (int i = 0; i < 20; i++) {
         if (num[i] == 0) continue;
-        for (int j = i + 1; j < 20; j++) { // j는 항상 i+1부터 시작
+        for (int j = i + 1; j < 20; j++) { 
             if (num[j] == 0) continue;
             total_cases++;
             int your_score = calculate_score(num[i], num[j]);
@@ -43,9 +43,7 @@ float calculate_probability(int a, int b) {
             }
         }
     }
-    printf("total_cases: %d\n", total_cases);
-    printf("lose_cases: %d\n", lose_cases);
-    // 확률 계산
+
     return (float)(total_cases - lose_cases) / total_cases;
 }
 
