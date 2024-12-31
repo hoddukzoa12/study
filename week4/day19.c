@@ -1,8 +1,8 @@
 #include<stdio.h>
 
-int fiboData[90] = {0, };
+long long int fiboData[90] = {0, };
 
-int bottomUp(int n) {
+long long int bottomUp(int n) {
     fiboData[0] = 0;
     fiboData[1] = 1;
     
@@ -13,11 +13,11 @@ int bottomUp(int n) {
 }
 
 int main(){
-    int n;
+    long long int n;
 
     scanf("%d", &n);
 
-    printf("%d\n", bottomUp(n));
+    printf("%lld", bottomUp(n));
 
     return 0;
 
