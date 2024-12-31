@@ -1,18 +1,23 @@
 #include<stdio.h>
 
-long long int fibo(int n){
-    if(n == 0) return 0;
-    if(n == 1) return 1;
+int fiboData[90] = {0, };
 
-    return fibo(n-1) + fibo(n-2);
+int bottomUp(int n) {
+    fiboData[0] = 0;
+    fiboData[1] = 1;
+    
+    for (int i=2; i<=n; i++)
+      fiboData[i] = fiboData[i - 1] + fiboData[i - 2];
+
+    return fiboData[n];
 }
 
 int main(){
-    long long int n;
+    int n;
 
     scanf("%d", &n);
 
-    printf("%d\n", fibo(n));
+    printf("%d\n", bottomUp(n));
 
     return 0;
 
